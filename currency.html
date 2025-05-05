@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Currency Converter</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="stocks.html">Live Stocks</a></li>
+          <li><a href="currency.html" class="active">Currency Converter</a></li>
+          <li><a href="interest.html">Compound Interest Calculator</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="cart.html" class="cart-icon">🛒</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="converter-container">
+        <h2>Convert Currency</h2>
+        <div class="converter-card">
+          <label>Amount:</label>
+          <input type="number" id="amount" placeholder="Enter amount" />
+          <p></p>
+          <p></p>
+          <div class="currency-selectors">
+            <div>
+              <label>From:</label>
+              <select id="from-currency"></select>
+            </div>
+            <p></p>
+            <p></p>
+            <div>
+              <label>To:</label>
+              <select id="to-currency"></select>
+            </div>
+          </div>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <button id="convert-btn">Convert</button>
+          <p id="conversion-result"></p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

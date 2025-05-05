@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reference Books</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        background-color: #454545;
+        font-family: Arial, sans-serif;
+      }
+      header {
+        width: 100%;
+        background: #222;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+      }
+      .book-container {
+        width: 90vw;
+        max-width: 800px;
+        background: rgb(34, 34, 34);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-top: 20px;
+      }
+      .book-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        text-align: center;
+      }
+      .book {
+        padding: 15px;
+        background: #000000;
+        border-radius: 5px;
+        color: white;
+      }
+      .book a {
+        color: white;
+        text-decoration: none;
+      }
+      .book a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Reference Books</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="stocks.html">Live Stocks</a></li>
+          <li><a href="currency.html">Currency Converter</a></li>
+          <li><a href="interest.html">Compound Interest Calculator</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="cart.html" class="cart-icon">🛒</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <div class="book-container">
+      <h2>Top 10 Books on Financial Management & Stock Marketing</h2>
+      <div class="book-grid">
+        <div class="book"><a href="https://www.amazon.com/dp/0060555661" target="_blank">The Intelligent Investor - Benjamin Graham</a></div>
+        <div class="book"><a href="https://www.amazon.com/dp/0743200403" target="_blank">One Up On Wall Street - Peter Lynch</a></div>
+        <div class="book"><a href="https://www.amazon.com/dp/0393358380" target="_blank">A Random Walk Down Wall Street - Burton G. Malkiel</a></div>
+        <div class="book"><a href="https://www.amazon.com/dp/1119404509" target="_blank">The Little Book of Common Sense Investing - John C. Bogle</a></div>
+        <div class="book"><a href="https://www.amazon.com/dp/1612680194" target="_blank">Rich Dad Poor Dad - Robert Kiyosaki</a></div>
+        <div class="book"><a href="https://www.amazon.com/dp/0857197681" target="_blank">The Psychology of Money - Morgan Housel</a></div>
+        <div class="book"><a href="https://www.amazon.com/dp/0471445509" target="_blank">Common Stocks and Uncommon Profits - Philip Fisher</a></div>
+        <div class="book"><a href="https://www.amazon.com/dp/0471392642" target="_blank">The Warren Buffett Way - Robert G. Hagstrom</a></div>
+        <div class="book"><a href="https://www.amazon.com/dp/1501518259" target="_blank">Market Wizards - Jack D. Schwager</a></div>
+        <div class="book"><a href="https://www.amazon.com/dp/1118821157" target="_blank">The Essays of Warren Buffett - Warren Buffett & Lawrence A. Cunningham</a></div>
+      </div>
+    </div>
+  </body>
+</html>

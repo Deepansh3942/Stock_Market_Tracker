@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <header>
+      <h1>Cart</h1>
+      <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="stocks.html" class="active">Live Stocks</a></li>
+            <li><a href="currency.html">Currency Converter</a></li>
+            <li><a href="interest.html">Compound Interest Calculator</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="cart.html" class="cart-icon">🛒</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <!-- Cart Section -->
+    <main>
+      <section>
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+          <p>Loading cart...</p>
+        </div>
+        <h3>Total: ₹<span id="cart-total">0</span></h3>
+        <button id="clear-cart">Clear Cart</button>
+        <button id="purchase">Purchase</button>
+      </section>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        displayCart();
+
+        // Event listeners for buttons
+        document
+          .getElementById("clear-cart")
+          .addEventListener("click", clearCart);
+        document
+          .getElementById("purchase")
+          .addEventListener("click", purchaseStocks);
+      });
+
+      // Display cart items
+      function displayCart() {
+        let cartContainer = document.getElementById("cart-items");
+        let cartTotal = document.getElementById("cart-total");
+        if (!cartContainer || !cartTotal) return;
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cartContainer.innerHTML = "";
+
+        if (cart.length === 0) {
+          cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+          cartTotal.innerText = "0";
+          return;
+        }
+
+        let total = 0;
+        cart.forEach((item, index) => {
+          total += item.price;
+          let itemDiv = document.createElement("div");
+          itemDiv.classList.add("cart-item");
+          itemDiv.innerHTML = `
+                    <p>${item.name} - ₹${item.price}</p>
+                    <button onclick="removeFromCart(${index})">Remove</button>
+                `;
+          cartContainer.appendChild(itemDiv);
+        });
+
+        cartTotal.innerText = total;
+      }
+
+      // Remove item from cart
+      function removeFromCart(index) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        displayCart();
+      }
+
+      // Clear cart function
+      function clearCart() {
+        localStorage.removeItem("cart");
+        displayCart();
+        showPopup("Cart Cleared!");
+      }
+
+      // Purchase stocks function
+      function purchaseStocks() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        if (cart.length === 0) {
+          showPopup("Your cart is empty!");
+          return;
+        }
+
+        localStorage.removeItem("cart"); // Clear cart after purchase
+        displayCart();
+        showPopup("Purchase Successful! Stocks added to your portfolio.");
+      }
+
+      // Show pop-up notification
+      function showPopup(message) {
+        let popup = document.createElement("div");
+        popup.classList.add("popup-message");
+        popup.innerText = message;
+        document.body.appendChild(popup);
+
+        setTimeout(() => {
+          popup.remove();
+        }, 1500);
+      }
+    </script>
+  </body>
+</html>

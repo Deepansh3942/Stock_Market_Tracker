@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: url('wallpaper.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #e0e0e0;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+header {
+    background: rgba(30, 30, 30, 0.8);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.5s ease-in-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+nav ul a:hover {
+    color: #28a745;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+nav ul a:last-child {
+    margin-left: auto;
+} 
+
+section {
+    background: rgba(30, 30, 30, 0.5); 
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    text-align: center;
+}
+/* 
+section:hover {
+    transform: scale(1.02);
+    background: rgba(30, 30, 30, 0.5); /* More transparency on hover 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+} */
+
+button {
+    background: #28a745;
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #218838;
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(0.95);
+}

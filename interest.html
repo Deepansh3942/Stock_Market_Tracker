@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compound Interest Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Interest Calculator</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="stocks.html">Live Stocks</a></li>
+          <li><a href="currency.html">Currency Converter</a></li>
+          <li><a href="interest.html" class="active">Compound Interest Calculator</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="cart.html" class="cart-icon">🛒</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="calculator-container">
+        <h2>Calculate Compound Interest</h2>
+        <div class="calculator-card">
+          <label>Principal Amount (₹):</label>
+          <input type="number" id="principal" placeholder="Enter principal" />
+        </div>
+        <br /><br />
+        <div>
+          <label>Annual Interest Rate (%):</label>
+          <input type="number" id="rate" placeholder="Enter rate" />
+        </div>
+        <br /><br />
+        <div>
+          <label>Time (years):</label>
+          <input typ e="number" id="time" placeholder="Enter time" />
+        </div>
+        <br /><br />
+        <div>
+          <label>Compounds per year:</label>
+          <input type="number" id="frequency" placeholder="Enter frequency" />
+        </div>
+        <br /><br />
+        <div>
+          <button id="calculate-btn">Calculate</button>
+          <p id="interest-result"></p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
